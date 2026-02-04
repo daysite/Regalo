@@ -1,0 +1,324 @@
+/* ESTILOS GENERALES - FONDO ROSADO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(135deg, #ffafcc 0%, #ffc8dd 50%, #ffafcc 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* FONDO DE CORAZONES ANIMADOS */
+.corazones-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.corazones-fondo::before,
+.corazones-fondo::after,
+.corazones-fondo i {
+    content: "❤";
+    position: absolute;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    animation: lluvia-corazones 15s linear infinite;
+}
+
+.corazones-fondo::before {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 20s;
+}
+
+.corazones-fondo::after {
+    left: 50%;
+    animation-delay: 5s;
+    animation-duration: 25s;
+}
+
+.corazones-fondo i {
+    font-style: normal;
+    left: 80%;
+    animation-delay: 10s;
+    font-size: 25px;
+}
+
+@keyframes lluvia-corazones {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor {
+    width: 90%;
+    max-width: 700px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* TARJETA PRINCIPAL */
+.tarjeta {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.3);
+    text-align: center;
+    border: 8px solid #ff6b9d;
+    position: relative;
+    overflow: hidden;
+    animation: aparecer 1.5s ease-out;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ENCABEZADO */
+.encabezado {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.corazon-latente {
+    font-size: 50px;
+    color: #ff4081;
+    animation: latido 1.2s infinite;
+    margin-bottom: 15px;
+    display: block;
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+h1 {
+    color: #e91e63;
+    font-size: 2.8rem;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Pacifico', cursive;
+}
+
+/* CONTENIDO */
+.contenido {
+    padding: 20px 0;
+}
+
+.mensaje-especial {
+    font-size: 1.8rem;
+    color: #880e4f;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: linear-gradient(to right, #fce4ec, #f8bbd9);
+    border-radius: 15px;
+    border-left: 6px solid #f50057;
+}
+
+/* PREGUNTA FINAL */
+.pregunta-final {
+    margin-top: 30px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(233, 30, 99, 0.2);
+    border: 3px dashed #ff4081;
+}
+
+.pregunta-final h2 {
+    color: #d81b60;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-family: 'Pacifico', cursive;
+}
+
+/* BOTONES */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-si, .btn-no {
+    padding: 18px 40px;
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 250px;
+}
+
+.btn-si {
+    background: linear-gradient(45deg, #f50057, #ff4081);
+    color: white;
+    box-shadow: 0 8px 20px rgba(245, 0, 87, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-si:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(245, 0, 87, 0.6);
+    background: linear-gradient(45deg, #c51162, #f50057);
+}
+
+.btn-si:active {
+    transform: translateY(-2px);
+}
+
+.btn-no {
+    background: linear-gradient(45deg, #b0bec5, #78909c);
+    color: white;
+    box-shadow: 0 8px 20px rgba(96, 125, 139, 0.4);
+    position: relative;
+}
+
+.btn-no:hover {
+    background: linear-gradient(45deg, #78909c, #546e7a);
+}
+
+/* MENSAJE DE ACEPTACIÓN */
+.mensaje-aceptacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 175, 204, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.mensaje-aceptacion.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenido-aceptacion {
+    background: white;
+    padding: 50px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 25px 50px rgba(233, 30, 99, 0.4);
+    border: 10px solid #ff4081;
+    animation: latido 1.5s infinite;
+}
+
+.contenido-aceptacion h2 {
+    color: #e91e63;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+}
+
+.contenido-aceptacion p {
+    font-size: 1.8rem;
+    color: #880e4f;
+    margin: 15px 0;
+}
+
+.firma {
+    font-size: 2.2rem !important;
+    color: #f50057 !important;
+    margin-top: 30px !important;
+    font-weight: bold;
+}
+
+.btn-cerrar {
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Dancing Script', cursive;
+}
+
+.btn-cerrar:hover {
+    background: #f50057;
+    transform: scale(1.1);
+}
+
+/* RESPONSIVE - Para móviles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .pregunta-final h2 {
+        font-size: 1.8rem;
+    }
+    
+    .botones {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-si, .btn-no {
+        min-width: 200px;
+        font-size: 1.5rem;
+        padding: 15px 30px;
+    }
+    
+    .mensaje-especial {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+    
+    .contenido-aceptacion {
+        padding: 30px;
+    }
+    
+    .contenido-aceptacion h2 {
+        font-size: 2rem;
+    }
+}
