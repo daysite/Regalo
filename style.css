@@ -1,4 +1,4 @@
-/* ESTILOS COMPACTOS - TODO EN UN CUADRO */
+/* ESTILOS COMPACTOS - MÍNIMO ESPACIO EN BLANCO */
 * {
     margin: 0;
     padding: 0;
@@ -12,11 +12,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     position: relative;
 }
 
-/* Fondo muy sutil */
+/* Fondo mínimo */
 .corazones-fondo {
     position: fixed;
     top: 0;
@@ -25,46 +25,46 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.15;
 }
 
 .corazones-fondo::before {
     content: "❤";
     position: absolute;
-    font-size: 14px;
+    font-size: 12px;
     color: #ff4081;
-    animation: flotar 15s linear infinite;
-    left: 20%;
+    animation: flotar 12s linear infinite;
+    left: 15%;
 }
 
 @keyframes flotar {
     0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.5; }
-    90% { opacity: 0.5; }
+    10% { opacity: 0.4; }
+    90% { opacity: 0.4; }
     100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
 }
 
-/* CUADRO COMPACTO PRINCIPAL */
+/* CUADRO MUY COMPACTO */
 .cuadro-compacto {
     width: 100%;
-    max-width: 380px; /* MUCHO MÁS PEQUEÑO */
+    max-width: 350px;
     background: white;
-    border-radius: 15px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.25);
-    border: 3px solid #ff6b9d;
-    animation: aparecer 0.8s ease-out;
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.2);
+    border: 2px solid #ff6b9d;
+    animation: aparecer 0.6s ease-out;
 }
 
 @keyframes aparecer {
-    0% { opacity: 0; transform: scale(0.9); }
+    0% { opacity: 0; transform: scale(0.95); }
     100% { opacity: 1; transform: scale(1); }
 }
 
-/* SECCIÓN IMAGEN */
+/* IMAGEN - MÁS ESPACIO, MENOS BLANCO */
 .seccion-imagen {
     width: 100%;
-    height: 220px; /* Altura fija más pequeña */
+    height: 240px; /* Más altura para la imagen */
     position: relative;
     overflow: hidden;
 }
@@ -82,86 +82,86 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4));
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.3));
     pointer-events: none;
 }
 
-/* SECCIÓN PREGUNTA */
+/* PREGUNTA - MENOS ESPACIO */
 .seccion-pregunta {
-    padding: 20px 15px 15px;
+    padding: 15px 12px 10px; /* Reducido */
     background: white;
     text-align: center;
 }
 
 .seccion-pregunta h1 {
     color: #e91e63;
-    font-size: 1.7rem;
+    font-size: 1.6rem; /* Un poco más pequeño */
     font-family: 'Pacifico', cursive;
     margin: 0;
-    line-height: 1.3;
+    line-height: 1.2;
 }
 
-/* SECCIÓN BOTONES - COMPACTA */
+/* BOTONES - MÁS COMPACTOS */
 .seccion-botones {
     display: flex;
-    padding: 0 15px 15px;
-    gap: 12px;
+    padding: 0 12px 12px; /* Reducido */
+    gap: 10px; /* Menor separación */
     background: white;
 }
 
-/* BOTONES COMPACTOS */
+/* BOTONES MÁS PEQUEÑOS */
 .btn-si-compacto, .btn-no-compacto {
     flex: 1;
-    padding: 12px 5px;
-    font-size: 1.3rem;
+    padding: 10px 3px; /* Más compacto */
+    font-size: 1.25rem;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    min-height: 45px;
+    gap: 6px;
+    min-height: 42px;
 }
 
 /* BOTÓN SÍ - IZQUIERDA */
 .btn-si-compacto {
     background: linear-gradient(45deg, #4CAF50, #66BB6A);
     color: white;
-    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 3px 8px rgba(76, 175, 80, 0.25);
     order: 1;
 }
 
 .btn-si-compacto:hover {
     background: linear-gradient(45deg, #388E3C, #4CAF50);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+    box-shadow: 0 5px 12px rgba(76, 175, 80, 0.35);
 }
 
 /* BOTÓN NO - DERECHA */
 .btn-no-compacto {
     background: linear-gradient(45deg, #f44336, #EF5350);
     color: white;
-    box-shadow: 0 4px 10px rgba(244, 67, 54, 0.3);
+    box-shadow: 0 3px 8px rgba(244, 67, 54, 0.25);
     order: 2;
 }
 
 .btn-no-compacto:hover {
     background: linear-gradient(45deg, #d32f2f, #f44336);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(244, 67, 54, 0.4);
+    box-shadow: 0 5px 12px rgba(244, 67, 54, 0.35);
 }
 
 .btn-si-compacto:active, .btn-no-compacto:active {
     transform: translateY(0);
 }
 
-/* MENSAJE PEQUEÑO */
+/* MENSAJE - MUY PEQUEÑO */
 .mensaje-pequeno {
-    padding: 12px 15px 20px;
+    padding: 8px 12px 15px; /* Reducido */
     background: #fff5f7;
     text-align: center;
     border-top: 1px solid #ffe4e9;
@@ -169,17 +169,18 @@ body {
 
 .mensaje-pequeno p {
     color: #e91e63;
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Más pequeño */
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .mensaje-pequeno i {
     color: #ff4081;
     animation: latido 1.5s infinite;
+    font-size: 0.9rem;
 }
 
 @keyframes latido {
@@ -187,7 +188,7 @@ body {
     50% { transform: scale(1.1); }
 }
 
-/* MENSAJE DE ACEPTACIÓN */
+/* MENSAJE DE ACEPTACIÓN COMPACTO */
 .mensaje-aceptacion {
     position: fixed;
     top: 0;
@@ -201,8 +202,8 @@ body {
     z-index: 100;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.5s ease;
-    padding: 20px;
+    transition: all 0.4s ease;
+    padding: 15px;
 }
 
 .mensaje-aceptacion.visible {
@@ -212,77 +213,77 @@ body {
 
 .contenido-aceptacion {
     background: white;
-    padding: 30px 25px;
-    border-radius: 15px;
+    padding: 25px 20px;
+    border-radius: 12px;
     text-align: center;
-    max-width: 350px;
+    max-width: 320px;
     width: 100%;
-    box-shadow: 0 15px 30px rgba(233, 30, 99, 0.3);
-    border: 4px solid #ff4081;
-    animation: latido 1s infinite;
+    box-shadow: 0 12px 25px rgba(233, 30, 99, 0.25);
+    border: 3px solid #ff4081;
+    animation: latido 0.8s infinite;
 }
 
 .corazones-celebracion {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .corazones-celebracion i {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #ff4081;
-    margin: 0 8px;
-    animation: saltar 0.8s infinite alternate;
+    margin: 0 6px;
+    animation: saltar 0.7s infinite alternate;
 }
 
 .corazones-celebracion i:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 0.15s;
 }
 
 .corazones-celebracion i:nth-child(3) {
-    animation-delay: 0.4s;
+    animation-delay: 0.3s;
 }
 
 @keyframes saltar {
     from { transform: translateY(0); }
-    to { transform: translateY(-10px); }
+    to { transform: translateY(-8px); }
 }
 
 .contenido-aceptacion h2 {
     color: #e91e63;
-    font-size: 1.8rem;
-    margin-bottom: 12px;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
     font-family: 'Pacifico', cursive;
 }
 
 .contenido-aceptacion p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #880e4f;
-    margin: 8px 0;
-    line-height: 1.3;
+    margin: 6px 0;
+    line-height: 1.2;
 }
 
 .firma {
-    font-size: 1.4rem !important;
+    font-size: 1.3rem !important;
     color: #f50057 !important;
-    margin-top: 15px !important;
+    margin-top: 12px !important;
     font-weight: bold;
 }
 
 .btn-cerrar {
-    margin-top: 20px;
-    padding: 10px 25px;
+    margin-top: 15px;
+    padding: 8px 20px;
     background: #ff4081;
     color: white;
     border: none;
     border-radius: 50px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.2s;
     font-family: 'Dancing Script', cursive;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    margin: 20px auto 0;
+    gap: 6px;
+    margin: 15px auto 0;
 }
 
 .btn-cerrar:hover {
@@ -290,44 +291,72 @@ body {
     transform: scale(1.05);
 }
 
-/* EFECTO PARA EL BOTÓN NO (ESQUIVO) */
+/* EFECTO PARA EL BOTÓN NO */
 @keyframes sacudir {
     0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-8px); }
-    75% { transform: translateX(8px); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE EXTREMO */
 @media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+    
     .cuadro-compacto {
         max-width: 100%;
+        border-radius: 10px;
     }
     
     .seccion-imagen {
-        height: 200px;
+        height: 220px; /* Aún buena altura en móvil */
+    }
+    
+    .seccion-pregunta {
+        padding: 12px 10px 8px;
     }
     
     .seccion-pregunta h1 {
-        font-size: 1.5rem;
-        padding: 15px 10px 10px;
+        font-size: 1.4rem;
     }
     
     .seccion-botones {
         padding: 0 10px 10px;
-        gap: 10px;
+        gap: 8px;
     }
     
     .btn-si-compacto, .btn-no-compacto {
-        padding: 10px 5px;
-        font-size: 1.2rem;
-        min-height: 40px;
+        padding: 8px 3px;
+        font-size: 1.15rem;
+        min-height: 38px;
+        border-radius: 6px;
     }
     
     .mensaje-pequeno {
-        padding: 10px 15px 15px;
+        padding: 6px 10px 12px;
     }
     
     .mensaje-pequeno p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
+    
+    .contenido-aceptacion {
+        padding: 20px 15px;
+        max-width: 280px;
+    }
+    
+    .contenido-aceptacion h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* ESTILOS ESPECÍFICOS PARA LA IMAGEN MEJOR VISUALIZACIÓN */
+.imagen-compacta {
+    object-position: center 30%; /* Ajusta el enfoque de la imagen */
+}
+
+/* Eliminar cualquier margen/padding extra */
+.cuadro-compacto > * {
+    margin: 0;
 }
