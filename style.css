@@ -1,4 +1,4 @@
-/* ESTILOS GENERALES - FONDO ROSADO */
+/* ESTILOS GENERALES - MINIMALISTA */
 * {
     margin: 0;
     padding: 0;
@@ -7,16 +7,17 @@
 
 body {
     font-family: 'Dancing Script', cursive;
-    background: linear-gradient(135deg, #ffafcc 0%, #ffc8dd 50%, #ffafcc 100%);
+    background: linear-gradient(135deg, #ffb6c1 0%, #ffc8dd 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
     position: relative;
+    padding: 20px;
 }
 
-/* FONDO DE CORAZONES ANIMADOS */
+/* FONDO SUTIL DE CORAZONES */
 .corazones-fondo {
     position: fixed;
     top: 0;
@@ -25,67 +26,66 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: -1;
-    overflow: hidden;
+    opacity: 0.3;
 }
 
 .corazones-fondo::before,
 .corazones-fondo::after {
-    content: "❤";
+    content: "💗";
     position: absolute;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 18px;
-    animation: lluvia-corazones 15s linear infinite;
+    font-size: 16px;
+    animation: flotar 20s linear infinite;
 }
 
 .corazones-fondo::before {
-    left: 15%;
+    left: 10%;
     animation-delay: 0s;
-    animation-duration: 20s;
 }
 
 .corazones-fondo::after {
-    left: 70%;
-    animation-delay: 7s;
-    animation-duration: 25s;
+    left: 85%;
+    animation-delay: 10s;
 }
 
-@keyframes lluvia-corazones {
+@keyframes flotar {
     0% {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 1;
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
     }
     100% {
-        transform: translateY(100vh) rotate(360deg);
+        transform: translateY(-100px) rotate(360deg);
         opacity: 0;
     }
 }
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor {
-    width: 90%;
-    max-width: 500px; /* Más pequeño */
-    padding: 15px;
+    width: 100%;
+    max-width: 450px; /* Más compacto */
     position: relative;
     z-index: 1;
 }
 
-/* TARJETA PRINCIPAL */
-.tarjeta {
-    background: rgba(255, 255, 255, 0.98);
+.contenedor-principal {
+    background: rgba(255, 255, 255, 0.92);
     border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 15px 30px rgba(233, 30, 99, 0.25);
-    text-align: center;
-    border: 5px solid #ff6b9d;
-    position: relative;
+    padding: 0;
+    box-shadow: 0 15px 35px rgba(233, 30, 99, 0.2);
     overflow: hidden;
-    animation: aparecer 1.2s ease-out;
+    border: 3px solid #ff6b9d;
+    animation: aparecer 1s ease-out;
 }
 
 @keyframes aparecer {
     0% {
         opacity: 0;
-        transform: translateY(40px) scale(0.9);
+        transform: translateY(30px) scale(0.95);
     }
     100% {
         opacity: 1;
@@ -93,145 +93,74 @@ body {
     }
 }
 
-/* ENCABEZADO */
-.encabezado {
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.corazon-latente {
-    font-size: 40px;
-    color: #ff4081;
-    animation: latido 1.2s infinite;
-    margin-bottom: 10px;
-    display: block;
-}
-
-@keyframes latido {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-    100% { transform: scale(1); }
-}
-
-h1 {
-    color: #e91e63;
-    font-size: 2rem;
-    margin-top: 5px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    font-family: 'Pacifico', cursive;
-}
-
 /* CUADRO DE IMAGEN */
 .cuadro-imagen {
-    margin: 20px 0;
-    position: relative;
-}
-
-.marco-foto {
     width: 100%;
-    height: 250px;
-    border-radius: 15px;
-    overflow: hidden;
     position: relative;
-    border: 4px solid #ff4081;
-    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
-    margin-bottom: 10px;
 }
 
-.foto-principal {
+.marco-imagen {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.imagen-principal {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    display: block;
+    transition: transform 0.8s ease;
 }
 
-.marco-foto:hover .foto-principal {
-    transform: scale(1.05);
+.marco-imagen:hover .imagen-principal {
+    transform: scale(1.03);
 }
 
-.efecto-brillo {
+.overlay-imagen {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    animation: brillo 3s infinite;
+    background: linear-gradient(to bottom, rgba(255, 107, 157, 0.1), rgba(233, 30, 99, 0.3));
+    pointer-events: none;
 }
 
-@keyframes brillo {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.7; }
+/* PREGUNTA SOBRE LA IMAGEN */
+.pregunta-sobre-imagen {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    text-align: center;
 }
 
-.leyenda-foto {
-    font-size: 1.2rem;
-    color: #880e4f;
-    background: rgba(255, 182, 193, 0.2);
-    padding: 8px 15px;
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 5px;
-}
-
-.leyenda-foto i {
-    color: #ff4081;
-    margin-right: 8px;
-}
-
-/* MENSAJE ESPECIAL */
-.mensaje-contenedor {
-    margin: 20px 0;
-    padding: 15px;
-    background: linear-gradient(to right, #fce4ec, #f8bbd9);
-    border-radius: 15px;
-    border-left: 4px solid #f50057;
-}
-
-.texto-mensaje {
-    font-size: 1.4rem;
-    color: #880e4f;
-    line-height: 1.5;
-}
-
-.texto-mensaje p {
-    margin: 8px 0;
-}
-
-/* PREGUNTA FINAL */
-.pregunta-final {
-    margin-top: 25px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(233, 30, 99, 0.15);
-    border: 2px dashed #ff4081;
-}
-
-.pregunta-final h2 {
-    color: #d81b60;
-    font-size: 1.6rem;
-    margin-bottom: 20px;
+.pregunta-sobre-imagen h1 {
+    color: white;
+    font-size: 1.9rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     font-family: 'Pacifico', cursive;
+    margin: 0;
+    letter-spacing: 1px;
 }
 
-.pregunta-final h2 i {
-    color: #ff4081;
-    margin-right: 10px;
-}
-
-/* CONTENEDOR DE BOTONES - NUEVO DISEÑO */
+/* CONTENEDOR DE BOTONES - NUEVO ORDEN */
 .contenedor-botones {
     display: flex;
-    justify-content: space-between;
+    padding: 25px 20px 20px;
     gap: 15px;
-    margin-top: 15px;
+    background: white;
 }
 
-/* BOTONES MÁS PEQUEÑOS */
+/* BOTONES MÁS PEQUEÑOS Y REORDENADOS */
 .btn-si, .btn-no {
-    padding: 12px 25px;
-    font-size: 1.3rem;
+    flex: 1;
+    padding: 14px 5px;
+    font-size: 1.4rem;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -241,40 +170,68 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    flex: 1;
+    gap: 10px;
     min-height: 50px;
 }
 
-/* BOTÓN NO - IZQUIERDA */
-.btn-no {
-    background: linear-gradient(45deg, #b0bec5, #78909c);
+/* BOTÓN SÍ - IZQUIERDA */
+.btn-si {
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
     color: white;
-    box-shadow: 0 5px 12px rgba(96, 125, 139, 0.3);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
     order: 1; /* Izquierda */
 }
 
-.btn-no:hover {
-    background: linear-gradient(45deg, #78909c, #546e7a);
+.btn-si:hover {
+    background: linear-gradient(45deg, #388E3C, #689F38);
     transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
 }
 
-/* BOTÓN SÍ - DERECHA */
-.btn-si {
-    background: linear-gradient(45deg, #f50057, #ff4081);
+/* BOTÓN NO - DERECHA */
+.btn-no {
+    background: linear-gradient(45deg, #f44336, #EF5350);
     color: white;
-    box-shadow: 0 5px 12px rgba(245, 0, 87, 0.3);
+    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
     order: 2; /* Derecha */
 }
 
-.btn-si:hover {
+.btn-no:hover {
+    background: linear-gradient(45deg, #d32f2f, #E53935);
     transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(245, 0, 87, 0.4);
-    background: linear-gradient(45deg, #c51162, #f50057);
+    box-shadow: 0 8px 20px rgba(244, 67, 54, 0.4);
 }
 
 .btn-si:active, .btn-no:active {
     transform: translateY(0);
+}
+
+/* MENSAJE SUTIL */
+.mensaje-sutil {
+    padding: 15px 20px 25px;
+    background: #fff5f7;
+    text-align: center;
+    border-top: 1px solid #ffe4e9;
+}
+
+.mensaje-sutil p {
+    color: #e91e63;
+    font-size: 1.3rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mensaje-sutil i {
+    color: #ff4081;
+    animation: latido-sutil 1.5s infinite;
+}
+
+@keyframes latido-sutil {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
 }
 
 /* MENSAJE DE ACEPTACIÓN */
@@ -284,7 +241,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 175, 204, 0.95);
+    background: rgba(255, 182, 193, 0.95);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -292,6 +249,7 @@ h1 {
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease;
+    padding: 20px;
 }
 
 .mensaje-aceptacion.visible {
@@ -301,33 +259,58 @@ h1 {
 
 .contenido-aceptacion {
     background: white;
-    padding: 40px;
-    border-radius: 25px;
+    padding: 35px 30px;
+    border-radius: 20px;
     text-align: center;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.4);
-    border: 8px solid #ff4081;
-    animation: latido 1.5s infinite;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.3);
+    border: 5px solid #ff4081;
+    animation: latido 1s infinite;
+}
+
+.corazones-celebracion {
+    margin-bottom: 20px;
+}
+
+.corazones-celebracion i {
+    font-size: 2.5rem;
+    color: #ff4081;
+    margin: 0 10px;
+    animation: saltar 0.8s infinite alternate;
+}
+
+.corazones-celebracion i:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.corazones-celebracion i:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes saltar {
+    from { transform: translateY(0); }
+    to { transform: translateY(-15px); }
 }
 
 .contenido-aceptacion h2 {
     color: #e91e63;
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 15px;
     font-family: 'Pacifico', cursive;
 }
 
 .contenido-aceptacion p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #880e4f;
-    margin: 12px 0;
+    margin: 10px 0;
+    line-height: 1.4;
 }
 
 .firma {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
     color: #f50057 !important;
-    margin-top: 25px !important;
+    margin-top: 20px !important;
     font-weight: bold;
 }
 
@@ -342,6 +325,11 @@ h1 {
     cursor: pointer;
     transition: all 0.3s;
     font-family: 'Dancing Script', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px auto 0;
 }
 
 .btn-cerrar:hover {
@@ -349,57 +337,49 @@ h1 {
     transform: scale(1.05);
 }
 
-/* RESPONSIVE - Para móviles */
-@media (max-width: 768px) {
+/* RESPONSIVE */
+@media (max-width: 480px) {
     .contenedor {
-        width: 95%;
+        max-width: 100%;
         padding: 10px;
     }
     
-    .tarjeta {
-        padding: 20px;
+    .marco-imagen {
+        height: 300px;
     }
     
-    h1 {
-        font-size: 1.8rem;
-    }
-    
-    .pregunta-final h2 {
-        font-size: 1.4rem;
+    .pregunta-sobre-imagen h1 {
+        font-size: 1.6rem;
+        padding: 20px 15px;
     }
     
     .contenedor-botones {
-        flex-direction: column;
+        padding: 20px 15px 15px;
         gap: 10px;
     }
     
     .btn-si, .btn-no {
-        width: 100%;
-        font-size: 1.4rem;
-        padding: 15px;
-        min-height: 55px;
-    }
-    
-    .marco-foto {
-        height: 220px;
-    }
-    
-    .texto-mensaje {
+        padding: 12px 5px;
         font-size: 1.3rem;
+        min-height: 45px;
+    }
+    
+    .mensaje-sutil p {
+        font-size: 1.2rem;
     }
     
     .contenido-aceptacion {
-        padding: 25px;
+        padding: 25px 20px;
     }
     
     .contenido-aceptacion h2 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
 }
 
-/* Animación de shake para el botón NO */
-@keyframes shake {
+/* ANIMACIÓN PARA EL BOTÓN NO (ESQUIVO) */
+@keyframes sacudir {
     0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-    20%, 40%, 60%, 80% { transform: translateX(5px); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
 }
