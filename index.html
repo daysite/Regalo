@@ -3,71 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Quieres ser mi San Valentín? ❤️</title>
+    <title>Una pregunta especial... ❤️</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="contenedor">
-        <!-- Fondo animado de corazones -->
+        <!-- Fondo sutil de corazones -->
         <div class="corazones-fondo"></div>
         
-        <!-- Tarjeta principal -->
-        <div class="tarjeta">
-            <div class="encabezado">
-                <i class="fas fa-heart corazon-latente"></i>
-                <h1>Para ti, mi persona favorita 😍</h1>
-            </div>
+        <!-- Contenedor principal minimalista -->
+        <div class="contenedor-principal">
             
-            <!-- Cuadro con imagen -->
+            <!-- Cuadro con la imagen principal -->
             <div class="cuadro-imagen">
-                <div class="marco-foto">
-                    <!-- Reemplaza esta URL con el link de tu imagen -->
+                <div class="marco-imagen">
+                    <!-- TU IMAGEN PERSONAL -->
                     <img src="https://cdn.evogb.org/devdaniel/NXXDB5b0-YprhxzMp.jpeg" 
-                         alt="Nuestra foto especial" 
-                         class="foto-principal">
-                    <div class="efecto-brillo"></div>
-                </div>
-                <div class="leyenda-foto">
-                    <i class="fas fa-heart"></i> Cada momento a tu lado es un regalo
-                </div>
-            </div>
-            
-            <!-- Mensaje especial -->
-            <div class="mensaje-contenedor">
-                <div class="texto-mensaje">
-                    <p>Cada momento contigo es especial...</p>
-                    <p>Tu sonrisa ilumina mis días</p>
-                    <p>Y tu corazón hace que el mío lata más fuerte 💕</p>
-                </div>
-            </div>
-            
-            <!-- Pregunta final -->
-            <div class="pregunta-final">
-                <h2><i class="fas fa-question-circle"></i> ¿Quieres ser mi San Valentín?</h2>
-                
-                <div class="contenedor-botones">
-                    <!-- Botón NO a la izquierda -->
-                    <button class="btn-no" id="btnNo">
-                        <i class="fas fa-times-circle"></i> No
-                    </button>
+                         alt="Un momento especial" 
+                         class="imagen-principal">
+                    <div class="overlay-imagen"></div>
                     
-                    <!-- Botón SÍ a la derecha -->
-                    <button class="btn-si" id="btnSi">
-                        <i class="fas fa-heart-circle-check"></i> ¡Sí!
-                    </button>
+                    <!-- Pregunta superpuesta en la imagen -->
+                    <div class="pregunta-sobre-imagen">
+                        <h1>¿Quieres ser mi San Valentín?</h1>
+                    </div>
                 </div>
+            </div>
+            
+            <!-- Contenedor de botones -->
+            <div class="contenedor-botones">
+                <!-- Botón SÍ a la IZQUIERDA -->
+                <button class="btn-si" id="btnSi">
+                    <i class="fas fa-heart"></i> SÍ
+                </button>
+                
+                <!-- Botón NO a la DERECHA -->
+                <button class="btn-no" id="btnNo">
+                    <i class="fas fa-times"></i> NO
+                </button>
+            </div>
+            
+            <!-- Pequeño mensaje romántico -->
+            <div class="mensaje-sutil">
+                <p><i class="fas fa-heartbeat"></i> Cada momento a tu lado es un regalo</p>
             </div>
         </div>
         
-        <!-- Mensaje cuando dice SÍ -->
+        <!-- Mensaje de aceptación (oculto inicialmente) -->
         <div class="mensaje-aceptacion" id="mensajeAceptacion">
             <div class="contenido-aceptacion">
-                <h2>¡ME HAS HECHO EL SER MÁS FELIZ DEL MUNDO! 🥳💖</h2>
-                <p>Prometo hacer de este San Valentín el más especial de tu vida.</p>
-                <p class="firma">Con todo mi cariño... ❤️</p>
-                <button class="btn-cerrar" id="btnCerrar">Volver</button>
+                <div class="corazones-celebracion">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2>¡SÍ! 💖</h2>
+                <p>Me acabas de hacer la persona más feliz del mundo.</p>
+                <p>Prometo que este será el San Valentín más especial.</p>
+                <p class="firma">Con todo mi amor...</p>
+                <button class="btn-cerrar" id="btnCerrar">
+                    <i class="fas fa-redo"></i> Volver
+                </button>
             </div>
         </div>
     </div>
