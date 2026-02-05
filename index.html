@@ -3,55 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Una pregunta especial... ❤️</title>
+    <title>Para ti ❤️</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="contenedor">
-        <!-- Fondo sutil de corazones -->
+        <!-- Fondo sutil -->
         <div class="corazones-fondo"></div>
         
-        <!-- Contenedor principal minimalista -->
-        <div class="contenedor-principal">
+        <!-- CUADRO COMPACTO CON TODO -->
+        <div class="cuadro-compacto">
             
-            <!-- Cuadro con la imagen principal -->
-            <div class="cuadro-imagen">
-                <div class="marco-imagen">
-                    <!-- TU IMAGEN PERSONAL -->
-                    <img src="https://cdn.evogb.org/devdaniel/NXXDB5b0-YprhxzMp.jpeg" 
-                         alt="Un momento especial" 
-                         class="imagen-principal">
-                    <div class="overlay-imagen"></div>
-                    
-                    <!-- Pregunta superpuesta en la imagen -->
-                    <div class="pregunta-sobre-imagen">
-                        <h1>¿Quieres ser mi San Valentín?</h1>
-                    </div>
-                </div>
+            <!-- IMAGEN en la parte superior -->
+            <div class="seccion-imagen">
+                <img src="https://cdn.evogb.org/devdaniel/NXXDB5b0-YprhxzMp.jpeg" 
+                     alt="Nuestro momento especial" 
+                     class="imagen-compacta">
+                <div class="overlay-oscuro"></div>
             </div>
             
-            <!-- Contenedor de botones -->
-            <div class="contenedor-botones">
-                <!-- Botón SÍ a la IZQUIERDA -->
-                <button class="btn-si" id="btnSi">
+            <!-- PREGUNTA debajo de la imagen -->
+            <div class="seccion-pregunta">
+                <h1>¿Quieres ser mi San Valentín?</h1>
+            </div>
+            
+            <!-- BOTONES lado a lado -->
+            <div class="seccion-botones">
+                <!-- SÍ a la IZQUIERDA -->
+                <button class="btn-si-compacto" id="btnSi">
                     <i class="fas fa-heart"></i> SÍ
                 </button>
                 
-                <!-- Botón NO a la DERECHA -->
-                <button class="btn-no" id="btnNo">
+                <!-- NO a la DERECHA -->
+                <button class="btn-no-compacto" id="btnNo">
                     <i class="fas fa-times"></i> NO
                 </button>
             </div>
             
-            <!-- Pequeño mensaje romántico -->
-            <div class="mensaje-sutil">
+            <!-- Mensaje pequeño abajo -->
+            <div class="mensaje-pequeno">
                 <p><i class="fas fa-heartbeat"></i> Cada momento a tu lado es un regalo</p>
             </div>
         </div>
         
-        <!-- Mensaje de aceptación (oculto inicialmente) -->
+        <!-- Mensaje de aceptación -->
         <div class="mensaje-aceptacion" id="mensajeAceptacion">
             <div class="contenido-aceptacion">
                 <div class="corazones-celebracion">
