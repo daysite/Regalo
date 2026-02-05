@@ -17,28 +17,46 @@
         <div class="tarjeta">
             <div class="encabezado">
                 <i class="fas fa-heart corazon-latente"></i>
-                <h1>Para ti, mi persona favorita 💖</h1>
+                <h1>Para ti, mi persona favorita 😍</h1>
             </div>
             
-            <div class="contenido">
-                <p class="mensaje-especial">
-                    Cada momento contigo es especial...<br>
-                    Tu sonrisa ilumina mis días<br>
-                    Y tu corazón hace que el mío lata más fuerte 💓
-                </p>
+            <!-- Cuadro con imagen -->
+            <div class="cuadro-imagen">
+                <div class="marco-foto">
+                    <!-- Reemplaza esta URL con el link de tu imagen -->
+                    <img src="https://cdn.evogb.org/devdaniel/NXXDB5b0-YprhxzMp.jpeg" 
+                         alt="Nuestra foto especial" 
+                         class="foto-principal">
+                    <div class="efecto-brillo"></div>
+                </div>
+                <div class="leyenda-foto">
+                    <i class="fas fa-heart"></i> Cada momento a tu lado es un regalo
+                </div>
+            </div>
+            
+            <!-- Mensaje especial -->
+            <div class="mensaje-contenedor">
+                <div class="texto-mensaje">
+                    <p>Cada momento contigo es especial...</p>
+                    <p>Tu sonrisa ilumina mis días</p>
+                    <p>Y tu corazón hace que el mío lata más fuerte 💕</p>
+                </div>
+            </div>
+            
+            <!-- Pregunta final -->
+            <div class="pregunta-final">
+                <h2><i class="fas fa-question-circle"></i> ¿Quieres ser mi San Valentín?</h2>
                 
-                <div class="pregunta-final">
-                    <h2>¿Me harías el honor de ser mi San Valentín?</h2>
+                <div class="contenedor-botones">
+                    <!-- Botón NO a la izquierda -->
+                    <button class="btn-no" id="btnNo">
+                        <i class="fas fa-times-circle"></i> No
+                    </button>
                     
-                    <div class="botones">
-                        <button class="btn-si" id="btnSi">
-                            <i class="fas fa-heart"></i> ¡SÍ! ¡Claro que sí!
-                        </button>
-                        
-                        <button class="btn-no" id="btnNo">
-                            <i class="fas fa-times"></i> No, lo siento
-                        </button>
-                    </div>
+                    <!-- Botón SÍ a la derecha -->
+                    <button class="btn-si" id="btnSi">
+                        <i class="fas fa-heart-circle-check"></i> ¡Sí!
+                    </button>
                 </div>
             </div>
         </div>
