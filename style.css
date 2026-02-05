@@ -1,4 +1,4 @@
-/* ESTILOS GENERALES - MINIMALISTA */
+/* ESTILOS COMPACTOS - TODO EN UN CUADRO */
 * {
     margin: 0;
     padding: 0;
@@ -12,12 +12,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
-    position: relative;
     padding: 20px;
+    position: relative;
 }
 
-/* FONDO SUTIL DE CORAZONES */
+/* Fondo muy sutil */
 .corazones-fondo {
     position: fixed;
     top: 0;
@@ -26,143 +25,97 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: -1;
-    opacity: 0.3;
-}
-
-.corazones-fondo::before,
-.corazones-fondo::after {
-    content: "💗";
-    position: absolute;
-    font-size: 16px;
-    animation: flotar 20s linear infinite;
+    opacity: 0.2;
 }
 
 .corazones-fondo::before {
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.corazones-fondo::after {
-    left: 85%;
-    animation-delay: 10s;
+    content: "❤";
+    position: absolute;
+    font-size: 14px;
+    color: #ff4081;
+    animation: flotar 15s linear infinite;
+    left: 20%;
 }
 
 @keyframes flotar {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.7;
-    }
-    90% {
-        opacity: 0.7;
-    }
-    100% {
-        transform: translateY(-100px) rotate(360deg);
-        opacity: 0;
-    }
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.5; }
+    90% { opacity: 0.5; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
 }
 
-/* CONTENEDOR PRINCIPAL */
-.contenedor {
+/* CUADRO COMPACTO PRINCIPAL */
+.cuadro-compacto {
     width: 100%;
-    max-width: 450px; /* Más compacto */
-    position: relative;
-    z-index: 1;
-}
-
-.contenedor-principal {
-    background: rgba(255, 255, 255, 0.92);
-    border-radius: 20px;
-    padding: 0;
-    box-shadow: 0 15px 35px rgba(233, 30, 99, 0.2);
+    max-width: 380px; /* MUCHO MÁS PEQUEÑO */
+    background: white;
+    border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.25);
     border: 3px solid #ff6b9d;
-    animation: aparecer 1s ease-out;
+    animation: aparecer 0.8s ease-out;
 }
 
 @keyframes aparecer {
-    0% {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
-/* CUADRO DE IMAGEN */
-.cuadro-imagen {
+/* SECCIÓN IMAGEN */
+.seccion-imagen {
     width: 100%;
-    position: relative;
-}
-
-.marco-imagen {
-    width: 100%;
-    height: 350px;
+    height: 220px; /* Altura fija más pequeña */
     position: relative;
     overflow: hidden;
 }
 
-.imagen-principal {
+.imagen-compacta {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.8s ease;
 }
 
-.marco-imagen:hover .imagen-principal {
-    transform: scale(1.03);
-}
-
-.overlay-imagen {
+.overlay-oscuro {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(255, 107, 157, 0.1), rgba(233, 30, 99, 0.3));
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4));
     pointer-events: none;
 }
 
-/* PREGUNTA SOBRE LA IMAGEN */
-.pregunta-sobre-imagen {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 25px 20px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+/* SECCIÓN PREGUNTA */
+.seccion-pregunta {
+    padding: 20px 15px 15px;
+    background: white;
     text-align: center;
 }
 
-.pregunta-sobre-imagen h1 {
-    color: white;
-    font-size: 1.9rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+.seccion-pregunta h1 {
+    color: #e91e63;
+    font-size: 1.7rem;
     font-family: 'Pacifico', cursive;
     margin: 0;
-    letter-spacing: 1px;
+    line-height: 1.3;
 }
 
-/* CONTENEDOR DE BOTONES - NUEVO ORDEN */
-.contenedor-botones {
+/* SECCIÓN BOTONES - COMPACTA */
+.seccion-botones {
     display: flex;
-    padding: 25px 20px 20px;
-    gap: 15px;
+    padding: 0 15px 15px;
+    gap: 12px;
     background: white;
 }
 
-/* BOTONES MÁS PEQUEÑOS Y REORDENADOS */
-.btn-si, .btn-no {
+/* BOTONES COMPACTOS */
+.btn-si-compacto, .btn-no-compacto {
     flex: 1;
-    padding: 14px 5px;
-    font-size: 1.4rem;
+    padding: 12px 5px;
+    font-size: 1.3rem;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Dancing Script', cursive;
@@ -170,68 +123,68 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    min-height: 50px;
+    gap: 8px;
+    min-height: 45px;
 }
 
 /* BOTÓN SÍ - IZQUIERDA */
-.btn-si {
-    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+.btn-si-compacto {
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);
     color: white;
-    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-    order: 1; /* Izquierda */
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+    order: 1;
 }
 
-.btn-si:hover {
-    background: linear-gradient(45deg, #388E3C, #689F38);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+.btn-si-compacto:hover {
+    background: linear-gradient(45deg, #388E3C, #4CAF50);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
 }
 
 /* BOTÓN NO - DERECHA */
-.btn-no {
+.btn-no-compacto {
     background: linear-gradient(45deg, #f44336, #EF5350);
     color: white;
-    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
-    order: 2; /* Derecha */
+    box-shadow: 0 4px 10px rgba(244, 67, 54, 0.3);
+    order: 2;
 }
 
-.btn-no:hover {
-    background: linear-gradient(45deg, #d32f2f, #E53935);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(244, 67, 54, 0.4);
+.btn-no-compacto:hover {
+    background: linear-gradient(45deg, #d32f2f, #f44336);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(244, 67, 54, 0.4);
 }
 
-.btn-si:active, .btn-no:active {
+.btn-si-compacto:active, .btn-no-compacto:active {
     transform: translateY(0);
 }
 
-/* MENSAJE SUTIL */
-.mensaje-sutil {
-    padding: 15px 20px 25px;
+/* MENSAJE PEQUEÑO */
+.mensaje-pequeno {
+    padding: 12px 15px 20px;
     background: #fff5f7;
     text-align: center;
     border-top: 1px solid #ffe4e9;
 }
 
-.mensaje-sutil p {
+.mensaje-pequeno p {
     color: #e91e63;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
 }
 
-.mensaje-sutil i {
+.mensaje-pequeno i {
     color: #ff4081;
-    animation: latido-sutil 1.5s infinite;
+    animation: latido 1.5s infinite;
 }
 
-@keyframes latido-sutil {
+@keyframes latido {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+    50% { transform: scale(1.1); }
 }
 
 /* MENSAJE DE ACEPTACIÓN */
@@ -259,24 +212,24 @@ body {
 
 .contenido-aceptacion {
     background: white;
-    padding: 35px 30px;
-    border-radius: 20px;
+    padding: 30px 25px;
+    border-radius: 15px;
     text-align: center;
-    max-width: 400px;
+    max-width: 350px;
     width: 100%;
-    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.3);
-    border: 5px solid #ff4081;
+    box-shadow: 0 15px 30px rgba(233, 30, 99, 0.3);
+    border: 4px solid #ff4081;
     animation: latido 1s infinite;
 }
 
 .corazones-celebracion {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .corazones-celebracion i {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #ff4081;
-    margin: 0 10px;
+    margin: 0 8px;
     animation: saltar 0.8s infinite alternate;
 }
 
@@ -290,46 +243,46 @@ body {
 
 @keyframes saltar {
     from { transform: translateY(0); }
-    to { transform: translateY(-15px); }
+    to { transform: translateY(-10px); }
 }
 
 .contenido-aceptacion h2 {
     color: #e91e63;
-    font-size: 2.2rem;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
     font-family: 'Pacifico', cursive;
 }
 
 .contenido-aceptacion p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #880e4f;
-    margin: 10px 0;
-    line-height: 1.4;
+    margin: 8px 0;
+    line-height: 1.3;
 }
 
 .firma {
-    font-size: 1.6rem !important;
+    font-size: 1.4rem !important;
     color: #f50057 !important;
-    margin-top: 20px !important;
+    margin-top: 15px !important;
     font-weight: bold;
 }
 
 .btn-cerrar {
-    margin-top: 25px;
-    padding: 12px 30px;
+    margin-top: 20px;
+    padding: 10px 25px;
     background: #ff4081;
     color: white;
     border: none;
     border-radius: 50px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s;
     font-family: 'Dancing Script', cursive;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin: 25px auto 0;
+    gap: 8px;
+    margin: 20px auto 0;
 }
 
 .btn-cerrar:hover {
@@ -337,49 +290,44 @@ body {
     transform: scale(1.05);
 }
 
+/* EFECTO PARA EL BOTÓN NO (ESQUIVO) */
+@keyframes sacudir {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
 /* RESPONSIVE */
-@media (max-width: 480px) {
-    .contenedor {
+@media (max-width: 400px) {
+    .cuadro-compacto {
         max-width: 100%;
-        padding: 10px;
     }
     
-    .marco-imagen {
-        height: 300px;
+    .seccion-imagen {
+        height: 200px;
     }
     
-    .pregunta-sobre-imagen h1 {
-        font-size: 1.6rem;
-        padding: 20px 15px;
+    .seccion-pregunta h1 {
+        font-size: 1.5rem;
+        padding: 15px 10px 10px;
     }
     
-    .contenedor-botones {
-        padding: 20px 15px 15px;
+    .seccion-botones {
+        padding: 0 10px 10px;
         gap: 10px;
     }
     
-    .btn-si, .btn-no {
-        padding: 12px 5px;
-        font-size: 1.3rem;
-        min-height: 45px;
-    }
-    
-    .mensaje-sutil p {
+    .btn-si-compacto, .btn-no-compacto {
+        padding: 10px 5px;
         font-size: 1.2rem;
+        min-height: 40px;
     }
     
-    .contenido-aceptacion {
-        padding: 25px 20px;
+    .mensaje-pequeno {
+        padding: 10px 15px 15px;
     }
     
-    .contenido-aceptacion h2 {
-        font-size: 1.8rem;
+    .mensaje-pequeno p {
+        font-size: 1.1rem;
     }
-}
-
-/* ANIMACIÓN PARA EL BOTÓN NO (ESQUIVO) */
-@keyframes sacudir {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
 }
